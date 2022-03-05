@@ -31,10 +31,15 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   '@global': {
     a: {
-      "&:visited": {
-        color: theme.palette.text.secondary,
-      },
+      
       textDecoration: 'none',
+    },
+    footer: {
+      '& a': {
+        "&:visited": {
+          color: theme.palette.text.secondary,
+        },
+      },
     },
   },
   icon: {

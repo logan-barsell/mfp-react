@@ -18,7 +18,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        MARKETING.UI
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -91,7 +91,7 @@ const tiers = [
       'Help center access',
       'Priority email support',
     ],
-    buttonText: 'Get started',
+    buttonText: 'Become a Pro',
     buttonVariant: 'contained',
   },
   {
@@ -103,7 +103,7 @@ const tiers = [
       'Help center access',
       'Phone & email support',
     ],
-    buttonText: 'Contact us',
+    buttonText: 'Start your Enterprise',
     buttonVariant: 'outlined',
   },
 ];
@@ -159,9 +159,8 @@ export default function Pricing() {
           color="textSecondary"
           component="p"
         >
-          Quickly build an effective pricing table for your potential customers
-          with this layout. It&apos;s built with default Material-UI components
-          with little customization.
+          We offer several packages to accomodate your needs and budget. It only takes
+            a few minutes to get started, try it out!
         </Typography>
       </Container>
       {/* End hero unit */}
