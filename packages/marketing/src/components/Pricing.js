@@ -48,9 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardHeader: {
     backgroundColor:
-      theme.palette.type === 'light'
-        ? theme.palette.grey[200]
-        : theme.palette.grey[700],
+      theme.palette.info.light,
   },
   cardPricing: {
     display: 'flex',
@@ -150,7 +148,7 @@ export default function Pricing() {
           component="h1"
           variant="h2"
           align="center"
-          color="textPrimary"
+          color="primary"
           gutterBottom
         >
           Pricing
@@ -184,7 +182,7 @@ export default function Pricing() {
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  action={tier.title === 'Pro' ? <StarIcon htmlColor="white" /> : null}
                   className={classes.cardHeader}
                 />
                 <CardContent>

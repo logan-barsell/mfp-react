@@ -67,19 +67,19 @@ export default function Header({ isSignedIn, onSignOut }) {
     <React.Fragment>
       <AppBar
         position="static"
-        color="default"
+        color="inherit"
         elevation={0}
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
           <Typography
             variant="h6"
-            color="inherit"
+            color="primary"
             noWrap
             component={RouterLink}
             to="/"
           >
-            App
+            MARKETING.UI
           </Typography>
           <Button
             color="primary"
