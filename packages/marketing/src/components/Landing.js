@@ -72,7 +72,6 @@ export default function Album(props) {
   const classes = useStyles();
 
   const content = {
-    'badge': 'LOREM IPSUM',
     'header-p1': 'Modern Innovation',
     'header-p2': ' for the Modern Business.',
     'description': 'We use the most up-to-date tools and technologies to keep you at the top of your game.',    
