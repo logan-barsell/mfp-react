@@ -10,15 +10,16 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import MaterialLink from '@material-ui/core/Link';
 import { Link } from 'react-router-dom';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" to="/">
+      <MaterialLink component={Link} to="/" color="inherit">
         MARKETING.UI
-      </Link>{' '}
+      </MaterialLink>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -29,6 +30,25 @@ const useStyles = makeStyles((theme) => ({
   '@global': {
     a: {
       textDecoration: 'none',
+    },
+    // a: {
+    //   "&:visited": {
+    //     color: theme.palette.text.secondary,
+    //   },
+    // },
+    form: {
+      '& a': {
+        "&:visited": {
+          color: theme.palette.text.secondary,
+        },
+      },
+    },
+    p: {
+      '& a': {
+        "&:visited": {
+          color: theme.palette.text.secondary,
+        },
+      },
     },
   },
   paper: {

@@ -31,7 +31,6 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   '@global': {
     a: {
-      
       textDecoration: 'none',
     },
     footer: {
@@ -46,14 +45,13 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
+    background: 'linear-gradient(180deg, aliceblue, transparent)',
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
   footer: {
-    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
   section: {
@@ -65,8 +63,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
 }));
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function Album(props) {
   const classes = useStyles();
@@ -110,7 +106,6 @@ export default function Album(props) {
               We help you take your business to the next level by enabling you
               to easily track your sales and revenue, monitor your user&apos;s interactions,
                and review your companie&apos;s statistics and data from a comprehensibly laid out dashboard.
-               It's time to stop working so hard, and start working smart.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">

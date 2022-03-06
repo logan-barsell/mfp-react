@@ -61,9 +61,9 @@ export default function Header({ isSignedIn, onSignOut }) {
     <React.Fragment>
       <AppBar
         position="static"
-        color="inherit"
         elevation={0}
         className={classes.appBar}
+        color="inherit"
       >
         <Toolbar className={classes.toolbar}>
           <Typography

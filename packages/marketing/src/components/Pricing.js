@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import Divider from '@material-ui/core/Divider';
 import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
@@ -11,15 +12,16 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import MaterialLink from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <MaterialLink component={RouterLink} to="/" color="inherit">
         MARKETING.UI
-      </Link>{' '}
+      </MaterialLink>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -33,6 +35,17 @@ const useStyles = makeStyles((theme) => ({
       padding: 0,
       listStyle: 'none',
     },
+    a: {
+      textDecoration: 'none',
+    },
+    footer: {
+      '& a': {
+        "&:visited": {
+          color: theme.palette.text.secondary,
+        },
+      },
+      padding: theme.spacing(6),
+    },
   },
   toolbar: {
     flexWrap: 'wrap',
@@ -44,27 +57,18 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 1.5),
   },
   heroContent: {
+    background: 'linear-gradient(180deg, aliceblue, transparent)',
     padding: theme.spacing(8, 0, 6),
   },
   cardHeader: {
     backgroundColor:
-      theme.palette.info.light,
+      theme.palette.primary.main,
   },
   cardPricing: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'baseline',
     marginBottom: theme.spacing(2),
-  },
-  footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
   },
 }));
 
@@ -107,35 +111,6 @@ const tiers = [
     buttonVariant: 'outlined',
   },
 ];
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random features',
-      'Team features',
-      'Developer stuff',
-      'Another one',
-    ],
-  },
-  {
-    title: 'Resources',
-    description: [
-      'Resource',
-      'Resource name',
-      'Another resource',
-      'Final resource',
-    ],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
 
 export default function Pricing() {
   const classes = useStyles();
@@ -143,26 +118,28 @@ export default function Pricing() {
   return (
     <React.Fragment>
       {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography
-          component="h1"
-          variant="h2"
-          align="center"
-          color="primary"
-          gutterBottom
-        >
-          Pricing
-        </Typography>
-        <Typography
-          variant="h5"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          We offer several packages to accomodate your needs and budget. It only takes
-            a few minutes to get started, try it out!
-        </Typography>
-      </Container>
+      <div component="main" className={classes.heroContent}>
+        <Container maxWidth="sm">
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="primary"
+            gutterBottom
+          >
+            Pricing
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            color="textSecondary"
+            component="p"
+          >
+            We offer several packages to accomodate your needs and budget. It only takes
+              a few minutes to get started, try it out!
+          </Typography>
+        </Container>
+      </div>
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
@@ -222,29 +199,42 @@ export default function Pricing() {
         </Grid>
       </Container>
       {/* Footer */}
-      <Container maxWidth="md" component="footer" className={classes.footer}>
-        <Grid container spacing={4} justifyContent="space-evenly">
-          {footers.map((footer) => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map((item) => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+      <footer className={classes.footer}>
+        <Typography color="primary" variant="h6" align="center" gutterBottom>
+          MARKETING.UI
+        </Typography>
+        <Box my={4}>
+          <Typography
+            variant="subtitle1"
+            align="center"
+            color="textSecondary"
+            component="div"
+            gutterBottom={true}
+            
+          >
+            <Grid container spacing={3} justifyContent="center">
+              <Grid item>
+                <RouterLink to="/">
+                  HOME
+                </RouterLink>
+              </Grid>
+              <Divider orientation="vertical" variant="middle" flexItem />
+              <Grid item>
+                <RouterLink to="/pricing">
+                  PRICING
+                </RouterLink>
+              </Grid>
+              <Divider orientation="vertical" variant="middle" flexItem />
+              <Grid item>
+                <RouterLink to="/auth/signin">
+                  LOGIN
+                </RouterLink>
+              </Grid>
             </Grid>
-          ))}
-        </Grid>
-        <Box mt={5}>
-          <Copyright />
+          </Typography>
         </Box>
-      </Container>
+        <Copyright />
+      </footer>
       {/* End footer */}
     </React.Fragment>
   );
