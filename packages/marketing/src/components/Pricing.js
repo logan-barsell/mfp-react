@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     a: {
       textDecoration: 'none',
+      color: theme.palette.text.secondary,
     },
     footer: {
       '& a': {
