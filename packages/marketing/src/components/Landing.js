@@ -45,8 +45,22 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    background: 'linear-gradient(180deg, aliceblue, transparent)',
+    background: '-moz-linear-gradient(aliceblue, transparent)', /* FF 3.6+ */ 
+    background: '-ms-linear-gradient(aliceblue, transparent)', /* IE10 */ 
+    background: '-webkit-linear-gradient(aliceblue, transparent)', /* Safari 5.1+, Chrome 10+ */ 
+    background: '-o-linear-gradient(aliceblue, transparent)', /* Opera 11.10 */
+    background: 'linear-gradient(180deg, aliceblue, transparent)', /* standard */
     padding: theme.spacing(8, 0, 6),
+    '& h1': {
+      [theme.breakpoints.down('xs')]: {
+        fontSize: '40px',
+      },
+    },
+    '& p': {
+      [theme.breakpoints.down('xs')]: {
+        fontSize: '22px',
+      },
+    },
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -58,6 +72,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: 'url("nereus-assets/img/bg/pattern1.png")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    '& h2': {
+      '& span': {
+        [theme.breakpoints.down('xs')]: {
+          fontSize: '35px'
+        },
+      },
+    },
   },
   iconWrapper: {
     backgroundColor: theme.palette.primary.main,
