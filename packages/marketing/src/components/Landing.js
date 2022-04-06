@@ -123,7 +123,7 @@ export default function Album(props) {
             >
               We help you take your business to the next level by enabling you
               to easily track your sales and revenue, monitor your user&apos;s interactions,
-               and review your companie&apos;s statistics and data from a comprehensibly laid out dashboard.
+               and review your company&apos;s statistics and data from a comprehensibly laid out dashboard.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
